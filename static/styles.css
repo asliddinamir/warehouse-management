@@ -1,0 +1,142 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and font settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Container for the entire content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin: 50px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #2c3e50;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+/* Form Section */
+.form-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-section h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.form-section input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.form-section button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.form-section button:hover {
+    background-color: #3498db;
+}
+
+/* Table Section */
+.table-section {
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #2980b9;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table td input {
+    width: 80%;
+    margin-right: 10px;
+}
+
+table .delete-btn {
+    color: #e74c3c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table .delete-btn:hover {
+    color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .form-section,
+    .table-section {
+        margin-top: 20px;
+    }
+
+    .form-section input,
+    .form-section button {
+        width: 100%;
+    }
+
+    table td input {
+        width: 60%;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management</title>
+    <link
+      href="{{ url_for('static', filename='styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>Inventory Management</h1>
+        <p>Welcome to your warehouse management system</p>
+      </header>
+
+      <!-- Add Product Form -->
+      <section class="form-section">
+        <h2>Add New Product</h2>
+        <form action="/inventory/add" method="POST">
+          <input type="text" name="name" placeholder="Product Name" required />
+          <input type="text" name="description" placeholder="Description" />
+          <input
+            type="number"
+            name="quantity"
+            placeholder="Quantity"
+            required
+          />
+          <input type="text" name="tags" placeholder="Tags" />
+          <button type="submit">Add Product</button>
+        </form>
+      </section>
+
+      <!-- Product Inventory Table -->
+      <section class="table-section">
+        <h2>Current Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Quantity</th>
+              <th>Tags</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.tags }}</td>
+              <td>
+                <!-- Update Product Form -->
+                <form
+                  action="/inventory/update/{{ product.id }}"
+                  method="POST"
+                  class="inline-form"
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    value="{{ product.name }}"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="description"
+                    value="{{ product.description }}"
+                  />
+                  <input
+                    type="number"
+                    name="quantity"
+                    value="{{ product.quantity }}"
+                    required
+                  />
+                  <input type="text" name="tags" value="{{ product.tags }}" />
+                  <button type="submit">Update</button>
+                </form>
+                <!-- Delete Product -->
+                <a href="/inventory/delete/{{ product.id }}" class="delete-btn"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
