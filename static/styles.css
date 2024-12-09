@@ -81,6 +81,10 @@ header p {
 /* Table Section */
 .table-section {
     margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 table {
@@ -105,18 +109,32 @@ table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-table td input {
-    width: 80%;
-    margin-right: 10px;
+/* Update Form inside the table */
+table td form {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
 }
 
-table .delete-btn {
+table td input {
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+table td button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Delete Button */
+.delete-btn {
     color: #e74c3c;
     text-decoration: none;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-table .delete-btn:hover {
+.delete-btn:hover {
     color: #c0392b;
 }
 
@@ -137,6 +155,10 @@ table .delete-btn:hover {
     }
 
     table td input {
-        width: 60%;
+        width: 100%;
+    }
+
+    table td form {
+        width: 100%;
     }
 }
