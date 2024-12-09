@@ -49,12 +49,11 @@
               <th>Location</th>
               <th>Quantity</th>
               <th>Supplier</th>
-              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {% for product in products %}
-            <tr>
+            <tr class="product-info">
               <td>{{ product.id }}</td>
               <td>{{ product.category }}</td>
               <td>{{ product.sku }}</td>
@@ -62,59 +61,75 @@
               <td>{{ product.location }}</td>
               <td>{{ product.quantity }}</td>
               <td>{{ product.supplier }}</td>
-              <td>
-                <!-- Actions Column -->
-                <div class="actions-container">
-                  <!-- Update Product Form -->
-                  <form
-                    action="/inventory/update/{{ product.id }}"
-                    method="POST"
-                  >
-                    <input
-                      type="text"
-                      name="category"
-                      value="{{ product.category }}"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="sku"
-                      value="{{ product.sku }}"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="name"
-                      value="{{ product.name }}"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="location"
-                      value="{{ product.location }}"
-                      required
-                    />
-                    <input
-                      type="number"
-                      name="quantity"
-                      value="{{ product.quantity }}"
-                      required
-                    />
-                    <input
-                      type="text"
-                      name="supplier"
-                      value="{{ product.supplier }}"
-                      required
-                    />
-                    <button type="submit">Update</button>
-                  </form>
-                  <!-- Delete Product -->
-                  <a
-                    href="/inventory/delete/{{ product.id }}"
-                    class="delete-btn"
-                    >Delete</a
-                  >
-                </div>
+              <td></td>
+            </tr>
+            <tr class="product-actions">
+              <td colspan="7">
+                <form
+                  action="/inventory/update/{{ product.id }}"
+                  method="POST"
+                  class="action-form"
+                >
+                  <div class="action-container">
+                    <!-- All action elements (inputs and buttons) in a single row -->
+                    <div class="action-item">
+                      <input
+                        type="text"
+                        name="category"
+                        value="{{ product.category }}"
+                        required
+                      />
+                    </div>
+                    <div class="action-item">
+                      <input
+                        type="text"
+                        name="sku"
+                        value="{{ product.sku }}"
+                        required
+                      />
+                    </div>
+                    <div class="action-item">
+                      <input
+                        type="text"
+                        name="name"
+                        value="{{ product.name }}"
+                        required
+                      />
+                    </div>
+                    <div class="action-item">
+                      <input
+                        type="text"
+                        name="location"
+                        value="{{ product.location }}"
+                        required
+                      />
+                    </div>
+                    <div class="action-item">
+                      <input
+                        type="number"
+                        name="quantity"
+                        value="{{ product.quantity }}"
+                        required
+                      />
+                    </div>
+                    <div class="action-item">
+                      <input
+                        type="text"
+                        name="supplier"
+                        value="{{ product.supplier }}"
+                        required
+                      />
+                    </div>
+                    <div class="action-item action-buttons">
+                      <button type="submit" class="update-btn">Update</button>
+                      <a
+                        href="/inventory/delete/{{ product.id }}"
+                        class="delete-btn"
+                        >Delete</a
+                      >
+                    </div>
+                  </div>
+                </form>
               </td>
             </tr>
             {% endfor %}

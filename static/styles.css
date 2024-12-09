@@ -109,32 +109,83 @@ table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Update Form inside the table */
-table td form {
+/* Layout for Two Rows (Info and Actions) */
+.product-info {
+    background-color: #ffffff;
+}
+
+.product-actions {
+    background-color: #f1f1f1;
+}
+
+.product-actions td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Action Container for One Row Layout */
+.product-actions .action-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-actions .action-item {
+    flex: 1 1 14%;
+    /* Ensure each element takes up equal width */
     display: flex;
     flex-direction: column;
-    width: 150px;
 }
 
-table td input {
+/* Style inputs */
+.product-actions .action-item input {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Action Buttons */
+.product-actions .action-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
     width: 100%;
 }
 
-table td button {
-    width: 100%;
-    margin-top: 8px;
+.product-actions .action-buttons button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 50%;
 }
 
-/* Delete Button */
-.delete-btn {
-    color: #e74c3c;
+.product-actions .action-buttons button:hover {
+    background-color: #3498db;
+}
+
+.product-actions .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 10px;
+    width: 50%;
 }
 
-.delete-btn:hover {
+.product-actions .delete-btn:hover {
     color: #c0392b;
 }
 
@@ -160,5 +211,14 @@ table td button {
 
     table td form {
         width: 100%;
+    }
+
+    /* Adjust grid for smaller screens */
+    .product-actions .action-container {
+        flex-direction: column;
+    }
+
+    .product-actions .action-item {
+        flex: 1 1 100%;
     }
 }
