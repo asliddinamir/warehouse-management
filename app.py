@@ -12,8 +12,12 @@ def create_app():
 
     @app.route('/')
     def home():
-        return "Welcome to the Warehouse Management System!"
-
+        return render_template('home.html')
+    
+    # @app.route('/home')
+    # def home():
+    #     return render_template('home.html')
+    
     @app.route('/inventory')
     def inventory():
         products = Product.query.all()

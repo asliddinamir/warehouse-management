@@ -10,6 +10,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7f6;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Container for the entire content */
@@ -17,22 +18,81 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 /* Header Section */
 header {
     text-align: center;
-    margin: 50px 0;
+    background-color: #2980b9;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 header h1 {
     font-size: 3em;
-    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
 header p {
     font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+header nav ul li {
+    font-size: 1.1em;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #34495e;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #2c3e50;
+}
+
+/* About Section */
+.about-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.1em;
     color: #7f8c8d;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    font-size: 1em;
+    color: #7f8c8d;
+    margin-top: 50px;
 }
 
 /* Form Section */
@@ -128,10 +188,12 @@ table tr:nth-child(even) {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: space-between;
 }
 
 .product-actions .action-item {
     flex: 1 1 14%;
+    /* Adjust the flex value to allow even distribution */
     display: flex;
     flex-direction: column;
 }
@@ -149,49 +211,41 @@ table tr:nth-child(even) {
 .product-actions .action-buttons {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: end;
+    justify-content: space-between;
     gap: 10px;
     width: 100%;
 }
 
-.product-actions .action-buttons button {
+.product-actions .action-buttons button,
+.product-actions .delete-btn {
     background-color: #2980b9;
     color: white;
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    width: 50%;
+    width: 48%;
+    text-align: center;
 }
 
-.product-actions .action-buttons button:hover {
+.product-actions .action-buttons button:hover,
+.product-actions .delete-btn:hover {
     background-color: #3498db;
 }
 
 .product-actions .delete-btn {
     background-color: #e74c3c;
-    color: white;
-    padding: 10px;
     font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    width: 50%;
 }
 
 .product-actions .delete-btn:hover {
-    color: #c0392b;
+    background-color: #c0392b;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .form-section,
@@ -218,5 +272,9 @@ table tr:nth-child(even) {
 
     .product-actions .action-item {
         flex: 1 1 100%;
+    }
+
+    .product-actions .action-buttons {
+        flex-direction: column;
     }
 }
