@@ -132,7 +132,6 @@ table tr:nth-child(even) {
 
 .product-actions .action-item {
     flex: 1 1 14%;
-    /* Ensure each element takes up equal width */
     display: flex;
     flex-direction: column;
 }
@@ -213,7 +212,6 @@ table tr:nth-child(even) {
         width: 100%;
     }
 
-    /* Adjust grid for smaller screens */
     .product-actions .action-container {
         flex-direction: column;
     }
