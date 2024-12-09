@@ -10,6 +10,18 @@
     />
   </head>
   <body>
+    <header>
+      <h1>Welcome to the Warehouse Management System</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('inventory') }}">Inventory</a></li>
+        </ul>
+      </nav>
+      <!-- Logout Button -->
+      <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </header>
+
     <div class="container">
       <!-- Header -->
       <header>

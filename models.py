@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin 
 
 db = SQLAlchemy()
 
@@ -13,8 +14,14 @@ class Product(db.Model):
     supplier = db.Column(db.String(100), nullable=False)
     tags = db.Column(db.String(100), nullable=True)  # For search functionality
 
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), nullable=False, unique=True)
+    password = db.Column(db.String(200), nullable=False)
+    role = db.Column(db.String(100), nullable=False)
+
     def __repr__(self):
-        return f'<Product {self.name}>'
+        return f'<User {self.username}>'
 
 class Inbound(db.Model):
     id = db.Column(db.Integer, primary_key=True)
